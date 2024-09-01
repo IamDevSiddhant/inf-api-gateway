@@ -1,0 +1,16 @@
+  server:
+    port: 9091
+
+
+  spring:
+    application:
+      name: INF-API-GATEWAY
+    cloud:
+      gateway:
+        routes:
+          -   id: INF-API-GATEWAY
+              uri: lb://INF-API-GATEWAY
+              predicates:
+                - Path=/api/v1/jwt
+
+
